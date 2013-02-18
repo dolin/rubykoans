@@ -5,10 +5,11 @@ require File.expand_path(File.dirname(__FILE__) + '/edgecase')
 class DiceSet
   attr_accessor :values
 
-   def roll(number_of_die)
+  def roll(num_of_die)
     @values = []
-    number_of_die.times { @values << rand(6) + 1 }
+    @values = (1..num_of_die).map { (rand(6) + 1) }
   end
+
 end
 
 class AboutDiceProject < EdgeCase::Koan
